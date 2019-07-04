@@ -18,8 +18,6 @@ public:
 template<class TKey>
 class NotFoundException : public std::exception
 {
-     
-public:
-     
+public:    
      virtual const TKey& GetKey() const noexcept = 0;
 };
