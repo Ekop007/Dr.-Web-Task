@@ -27,7 +27,6 @@ template<class TKey>
 NotFoundExceptionImpl<TKey>::NotFoundExceptionImpl(const TKey &k)
 {
     key = k;
-    this->what() = "Element not found";
 }
 
 template<class TKey>
@@ -74,7 +73,7 @@ DictionaryImpl<TKey, TValue>::~DictionaryImpl()
 template<class TKey, class TValue>
 const TValue &DictionaryImpl<TKey, TValue>::Get(const TKey &key) const
 {
-   if (array.count(key) > 0)
+   if (array.find(key) != array.end())
    {
        return array.at(key);
    }
